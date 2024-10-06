@@ -46,7 +46,7 @@ Note: Analyzing with full data rather than sample data can take at least several
 
 ## Examples
 Try out the following examples:
-* Asthma
+* **Asthma**
 
   ```yaml annotate
   # Sample analysis for asthma
@@ -70,10 +70,10 @@ Try out the following examples:
   ```
 
 
-* Stroke
+* **Stroke**
 
   ```yaml annotate
-  # Sample analysis for asthma
+  # Sample analysis for stroke
   python main.py stroke True  # For sample data, there may be herbal materials or compounds that do not yield results.
   ```
   
@@ -93,4 +93,13 @@ Try out the following examples:
   >>>  compound                       related disease target genes  average distance  ...   z-score  proximal is_in_arm
   1  apigenin  [ITGA2B, ITGB3, ALDH2, PLAT, IL1B, ALB, TRIM29...          1.717949  ... -4.176682       Yes       Yes
   0  catechin  [SOD1, MTHFR, ITGA2B, TRIM29, ITGAV, VKORC1, T...          1.818182  ... -3.422604       Yes        No
+  ```
+
+
+* **Try it on your own**
+
+  Create a txt file in the same format as the files in the UMLS_code directory. Write the UMLS identifiers (starting with C) of the phenotypes you want to analyze in the txt file, line by line, and save it as the name of the phenotype. Use the name of the file to perform your analysis.
+
+  ```yaml annotate
+  python main.py phenotype_name False  # For sample data, there may be herbal materials or compounds that do not yield results.
   ```

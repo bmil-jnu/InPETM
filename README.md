@@ -120,13 +120,13 @@ Try out the following examples:
   ```
   >>> * * * Herb-level Network Analysis Results * * *
   >>>              herb                       related disease target genes  ...   z-score proximal
-  0  Paeonia lactiflora  [BCL2, SMAD3, RANBP6, SLC25A46, IKZF4, GAB1, G...  ... -3.322159      Yes
+  0  Paeonia lactiflora  [BCL2, PYHIN1, ESR1, PSAP, TNF, NOS2, BRD2, RA...  ... -14.691928      Yes
   ```
 
   ```
   >>> * * * Compound-level Network Analysis Results * * *
   >>> compound                       related disease target genes  average distance  ...   z-score  proximal is_in_arm
-  0  catechin  [BCL2, SMAD3, RANBP6, SLC25A46, IKZF4, GAB1, G...          1.925926  ... -3.279547       Yes        No
+  0  catechin  [BCL2, PYHIN1, ESR1, PSAP, TNF, NOS2, BRD2, RA...               1.0  ... -14.89503       Yes        No
   ```
 
 
@@ -144,15 +144,15 @@ Try out the following examples:
   ```
   >>> * * * Herb-level Network Analysis Results * * *
   >>>                 herb                       related disease target genes  ...   z-score proximal
-  0   Paeonia suffruticosa  [SOD1, MTHFR, ITGA2B, TRIM29, ITGAV, VKORC1, T...  ... -3.581544      Yes
-  1  Glycyrrhiza uralensis  [ITGA2B, ITGB3, ALDH2, PLAT, IL1B, ALB, TRIM29...  ... -4.223914      Yes
+  0   Paeonia suffruticosa  [SOD1, MTHFR, TRIM29, PLAT, VKORC1, ITGAV, WNK...  ... -6.290607      Yes
+  1  Glycyrrhiza uralensis  [SOD1, IL1B, PLAT, ITGB3, ALDH2, ITGA2B, ALB, ...  ... -2.562244      Yes
   ```
 
   ```
   >>> * * * Compound-level Network Analysis Results * * *
   >>>  compound                       related disease target genes  average distance  ...   z-score  proximal is_in_arm
-  1  apigenin  [ITGA2B, ITGB3, ALDH2, PLAT, IL1B, ALB, TRIM29...          1.717949  ... -4.176682       Yes       Yes
-  0  catechin  [SOD1, MTHFR, ITGA2B, TRIM29, ITGAV, VKORC1, T...          1.818182  ... -3.422604       Yes        No
+  1  catechin  [SOD1, MTHFR, TRIM29, PLAT, VKORC1, ITGAV, WNK...             1.500  ... -6.494325       Yes        No
+  0  apigenin  [SOD1, IL1B, PLAT, ITGB3, ALDH2, ITGA2B, ALB, ...             1.375  ... -2.475444       Yes       Yes
   ```
 
 

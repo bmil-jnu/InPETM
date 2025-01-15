@@ -22,6 +22,7 @@ It is also recommended to use the following versions of packages:
 Note: In the full_data and data directories, you can see the raw files used for the preprocessing. The entities and amounts of data provided by each raw file are shown in the following table. Also for COCONUT, herbal material data with biological classifications higher than species are included because they are standardized based on taxonomy identifiers from the NCBI taxonomy database. Therefore, when standardizing the collected herbal material data, all biological classifications were considered and assigned identifiers, but only species and infraspecies were used in the experiment.
 
 * full_data 
+
 |File name|Entity|Amount of data|Note|
 |-----|-----|-----|-----|
 |prescription.csv|prescription|16260||
@@ -38,6 +39,7 @@ Note: In the full_data and data directories, you can see the raw files used for 
 |gene_phenotype.csv|gene-phenotype|2990372|interaction|
 
 * full_ARM_file - preprocessed
+
 |File name|Amount of data|Note|
 |-----|-----|-----|-----|
 |ARM_herb_dataframe.csv|16260 (prescriptions) x 628 (herbal materials)||
@@ -47,6 +49,7 @@ Note: In the full_data and data directories, you can see the raw files used for 
 
 
 * data (Sample)
+
 |File name|Entity|Amount of data|Note|
 |-----|-----|-----|-----|
 |prescription.csv|prescription|100||
@@ -63,6 +66,7 @@ Note: In the full_data and data directories, you can see the raw files used for 
 |gene_phenotype.csv|gene-phenotype|9467|interaction|
 
 * full_ARM_file - preprocessed
+
 |File name|Amount of data|Note|
 |-----|-----|-----|-----|
 |ARM_herb_dataframe.csv|17 (prescriptions) x 77 (herbal materials)||

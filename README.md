@@ -65,7 +65,8 @@ Note: In the full_data and data directories, you can see the raw files used for 
 |compound_gene.csv|compound-gene|3291|interaction|
 |gene_phenotype.csv|gene-phenotype|9467|interaction|
 
-* full_ARM_file - preprocessed
+
+* ARM_file - preprocessed
 
 |File name|Amount of data|Note|
 |-----|-----|-----|

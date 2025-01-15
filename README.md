@@ -41,7 +41,7 @@ Note: In the full_data and data directories, you can see the raw files used for 
 * full_ARM_file - preprocessed
 
 |File name|Amount of data|Note|
-|-----|-----|-----|-----|
+|-----|-----|-----|
 |ARM_herb_dataframe.csv|16260 (prescriptions) x 628 (herbal materials)||
 |ARM_compound_dataframe.csv|5187 (herbal materials) x 43454 (compounds)||
 |herb_level_DF.csv|16260|dataframe for preprocessing|
@@ -68,7 +68,7 @@ Note: In the full_data and data directories, you can see the raw files used for 
 * full_ARM_file - preprocessed
 
 |File name|Amount of data|Note|
-|-----|-----|-----|-----|
+|-----|-----|-----|
 |ARM_herb_dataframe.csv|17 (prescriptions) x 77 (herbal materials)||
 |ARM_compound_dataframe.csv|7 (herbal materials) x 49 (compounds)||
 |herb_level_DF.csv|17|dataframe for preprocessing|

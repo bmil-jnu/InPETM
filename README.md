@@ -11,6 +11,7 @@ In this work, we proposed an approach named InPETM, that integrates association 
 This source code was tested on the basic environment with:
 * python==3.9.7
 * conda==4.10.3
+* PostgreSQL == version 17
 
 It is also recommended to use the following versions of packages:
 * numpy==1.24.3
@@ -95,6 +96,78 @@ Note: In the full_data and data directories, you can see the raw files used for 
   conda activate InPETM
   ```
 
+
+* The network proximity calculation requires a biogrid.csv and the construction of a shortest distance database through the PostgreSQL environment. We provide example python code for this below: 
+
+  ```ruby
+  #Creating database
+  postgres_config = {
+        'dbname': 'postgres',
+        'user': 'postgres',
+        'password': '1234',
+        'host': 'localhost', 
+        'port': 5432 
+    }
+
+  new_db_name = "biogrid"
+
+  try:
+        connection = psycopg2.connect(**postgres_config)
+        connection.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
+        cursor = connection.cursor()
+        cursor.execute(f"CREATE DATABASE {new_db_name};")
+        print(f"Database '{new_db_name}'is successfully constructed.")
+
+    except Exception as e:
+        print(f"Error occurred during the database construction: {e}")
+
+    finally:
+        if cursor:
+            cursor.close()
+        if connection:
+            connection.close()
+        print("Connection closed.")
+
+  #Creating Table
+  aws_postrgesql_url='postgresql://postgres:1234@localhost:5432/biogrid'
+    engine_postgresql=create_engine(aws_postgesql_url)
+    
+    drop_table_query = "DROP TABLE IF EXISTS shortest_paths"
+
+    with engine_postgresql.connect() as connection:
+        connection.execute(text(drop_table_query))
+
+    create_table_query = """
+    CREATE TABLE IF NOT EXISTS shortest_paths (
+        source TEXT,
+        target TEXT,
+        distance INTEGER,
+        PRIMARY KEY (source, target)
+    )
+    """
+    with engine_postgresql.connect() as connection:
+        connection.execute(text(create_table_query))
+
+    insert_query = """
+    INSERT INTO shortest_paths (source, target, distance)
+    VALUES (:source, :target, :distance)
+    ON CONFLICT (source, target) DO NOTHING
+    """
+
+    with engine_postgresql.connect() as connection:
+        for source in tqdm(G.nodes()):
+            transaction = connection.begin()
+            shortest_paths = nx.single_source_shortest_path_length(G, source)
+        
+            for target, distance in shortest_paths.items():
+                connection.execute(
+                    text(insert_query),
+                    {"source": source, "target": target, "distance": distance}
+                )
+            transaction.commit() 
+
+    print("All shortest paths are saved.")
+  ```
 
 * Use the following code to run the integrated analysis for the phenotype. 
   

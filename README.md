@@ -82,7 +82,7 @@ Note: In the full_data and data directories, you can see the raw files used for 
 * In order to get InPETM, please clone this repo:
   
   ```yaml
-  git clone git@github.com:lapis423/InPETM.git
+  git clone git@github.com:bmil-jnu/InPETM.git
   cd InPETM
   ```
 

@@ -82,7 +82,7 @@ Note: In the full_data and data directories, you can see the raw files used for 
 * In order to get InPETM, please clone this repo:
   
   ```yaml
-  git clone git@github.com:bmil-jnu/InPETM.git
+  git clone https://github.com/bmil-jnu/InPETM.git
   cd InPETM
   ```
 
@@ -236,3 +236,14 @@ Try out the following examples:
   ```yaml annotate
   python main.py phenotype_name False  # For sample data, there may be herbal materials or compounds that do not yield results.
   ```
+
+
+* **Network Visualization**
+
+  This code only works with full data (sample=False). For the inferred association rules, we provide code to extract the dataframes for the three compounds identified through literature review and visualize them using Cytoscape. Identify biological targets that interact with the phenotype through interactive network visualization.
+
+  ```yaml annotate
+  python Network_visualization.py compound_id1 compound_id2 compound_id3 phenotype_name 
+  ```
+
+  ![Image](https://github.com/user-attachments/assets/6c8c68b3-0c9f-4ed1-b07a-424d439fdf12)
